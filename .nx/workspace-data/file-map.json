@@ -1,0 +1,188 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.6.3",
+  "deps": {
+    "nx": "19.6.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "xyz-test": [
+        {
+          "file": ".DS_Store",
+          "hash": "4058738502972944730"
+        },
+        {
+          "file": ".gitignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": "js-v6.4.10/.env.test.example",
+          "hash": "2431534151449337880"
+        },
+        {
+          "file": "js-v6.4.10/.gitignore",
+          "hash": "6031064277558118359"
+        },
+        {
+          "file": "js-v6.4.10/README.md",
+          "hash": "4452600212338208709"
+        },
+        {
+          "file": "js-v6.4.10/extra/get-eoa-session-sigs.ts",
+          "hash": "16271332715218898438"
+        },
+        {
+          "file": "js-v6.4.10/extra/refcode.ts",
+          "hash": "12007694744705360878"
+        },
+        {
+          "file": "js-v6.4.10/extra/tinny-environment.ts",
+          "hash": "14147758737765980306"
+        },
+        {
+          "file": "js-v6.4.10/index.html",
+          "hash": "18035450226464705408"
+        },
+        {
+          "file": "js-v6.4.10/jest.config.js",
+          "hash": "8180419764007251426"
+        },
+        {
+          "file": "js-v6.4.10/package-lock.json",
+          "hash": "539700007999506785"
+        },
+        {
+          "file": "js-v6.4.10/package.json",
+          "hash": "14857384449880444260"
+        },
+        {
+          "file": "js-v6.4.10/public/vite.svg",
+          "hash": "16046085400642193116"
+        },
+        {
+          "file": "js-v6.4.10/setupTests.ts",
+          "hash": "14841379545667762696"
+        },
+        {
+          "file": "js-v6.4.10/src/executeJs.ts",
+          "hash": "5212489563625915166"
+        },
+        {
+          "file": "js-v6.4.10/src/pkpSign.ts",
+          "hash": "6101859069445730945"
+        },
+        {
+          "file": "js-v6.4.10/src/test/executeJs.test.ts",
+          "hash": "1601197553511886929"
+        },
+        {
+          "file": "js-v6.4.10/src/test/pkpSign.test.ts",
+          "hash": "11443208753246929751"
+        },
+        {
+          "file": "js-v6.4.10/src/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "js-v6.4.10/tsconfig.json",
+          "hash": "12969368303391355816"
+        },
+        {
+          "file": "js-v6.4.10/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "js-v6.4.8/.env.test.example",
+          "hash": "2431534151449337880"
+        },
+        {
+          "file": "js-v6.4.8/.gitignore",
+          "hash": "6031064277558118359"
+        },
+        {
+          "file": "js-v6.4.8/README.md",
+          "hash": "4452600212338208709"
+        },
+        {
+          "file": "js-v6.4.8/extra/get-eoa-session-sigs.ts",
+          "hash": "16271332715218898438"
+        },
+        {
+          "file": "js-v6.4.8/extra/refcode.ts",
+          "hash": "12007694744705360878"
+        },
+        {
+          "file": "js-v6.4.8/extra/tinny-environment.ts",
+          "hash": "14147758737765980306"
+        },
+        {
+          "file": "js-v6.4.8/index.html",
+          "hash": "18035450226464705408"
+        },
+        {
+          "file": "js-v6.4.8/jest.config.js",
+          "hash": "8180419764007251426"
+        },
+        {
+          "file": "js-v6.4.8/package-lock.json",
+          "hash": "13884884861992409246"
+        },
+        {
+          "file": "js-v6.4.8/package.json",
+          "hash": "14857384449880444260"
+        },
+        {
+          "file": "js-v6.4.8/public/vite.svg",
+          "hash": "16046085400642193116"
+        },
+        {
+          "file": "js-v6.4.8/setupTests.ts",
+          "hash": "14841379545667762696"
+        },
+        {
+          "file": "js-v6.4.8/src/executeJs.ts",
+          "hash": "5212489563625915166"
+        },
+        {
+          "file": "js-v6.4.8/src/pkpSign.ts",
+          "hash": "6101859069445730945"
+        },
+        {
+          "file": "js-v6.4.8/src/test/executeJs.test.ts",
+          "hash": "1601197553511886929"
+        },
+        {
+          "file": "js-v6.4.8/src/test/pkpSign.test.ts",
+          "hash": "11443208753246929751"
+        },
+        {
+          "file": "js-v6.4.8/src/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "js-v6.4.8/tsconfig.json",
+          "hash": "12969368303391355816"
+        },
+        {
+          "file": "js-v6.4.8/vite-env.d.ts",
+          "hash": "12946363841406869089"
+        },
+        {
+          "file": "nx.json",
+          "hash": "13167373076889474133"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "16428793579191338916"
+        },
+        {
+          "file": "package.json",
+          "hash": "17681728629172420606"
+        }
+      ]
+    }
+  }
+}
