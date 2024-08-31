@@ -1,0 +1,21 @@
+{
+  "name": "xyz-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test-client": "nx run-many --target=test-client --all --parallel"
+  },
+  "description": "",
+  "devDependencies": {
+    "nx": "19.6.3"
+  },
+  "dependencies": {
+    "axios": "^1.7.6",
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
