@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test-client": "nx run-many --target=test-client --all --parallel"
+    "test-client": "TOTAL_RUNS=${TOTAL_RUNS} nx run-many --target=test-client --all --parallel"
   },
   "description": "",
   "devDependencies": {

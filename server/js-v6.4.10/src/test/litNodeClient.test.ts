@@ -13,6 +13,7 @@ let logFileHandle: number | null = null;
 let logEntries: any[] = [];
 
 test("client connect batch testing", async () => {
+    jest.setTimeout(1000000);
     const dir = path.dirname(LOG_FILE_PATH);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });

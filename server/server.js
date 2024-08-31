@@ -11,7 +11,10 @@ app.use(express.json());
 app.use(cors({ origin: true }));
 
 app.post("/testConnect/", (req, res) => {
-    exec("npm run test-client", { cwd: __dirname }, (error, stdout, stderr) => {
+    const { TOTAL_RUNS } = req.body;
+    console.log(`running tests ${TOTAL_RUNS} times`)
+
+    exec(`TOTAL_RUNS=${TOTAL_RUNS} npm run test-client`, { cwd: __dirname }, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error executing command: ${error.message}`);
             res.status(500).send(`Error executing command: ${error.message}`);
@@ -25,6 +28,7 @@ app.post("/testConnect/", (req, res) => {
         console.log(`stdout: ${stdout}`);
         res.send(`Command executed successfully:\n${stdout}`);
     });
+    // res.send("Command executed successfully");
 });
 
 app.get("/status", (req, res) => {

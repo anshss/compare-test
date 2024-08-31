@@ -5,7 +5,7 @@
         "test-client": {
             "executor": "nx:run-commands",
             "options": {
-                "command": "cd js-v6.4.10 && yarn && TOTAL_RUNS=1 yarn test"
+                "command": "cd js-v6.4.10 && yarn && TOTAL_RUNS=${TOTAL_RUNS} yarn test"
             }
         }
     }
