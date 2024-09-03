@@ -9,16 +9,15 @@ export default function Home() {
     const [totalRuns, setTotalRuns] = useState(1);
 
     async function hitTestConnect() {
-        console.log("Called API endpoint..")
+        console.log("Called API endpoint..");
         setResults("Loading...");
         try {
             const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/testConnect/`,
                 { TOTAL_RUNS: totalRuns }
             );
-            console.log(`Response from /testConnect/: ${response.data}`);
-            const responseObj = JSON.parse(response.data);
-            setResults(responseObj);
+            console.log(`Response from server:`, response.data);
+            setResults(response.data.message);
         } catch (error) {
             console.error(`Error: ${error}`);
             setResults("Failed");
@@ -41,7 +40,7 @@ export default function Home() {
                 Test Connection
             </button>
             <div className="mt-6">
-                {results === "" ? (
+                {results === "" || results === "Failed" ? (
                     <div className="text-gray-500">Nothing to show</div>
                 ) : results === "Loading..." ? (
                     <div className="text-gray-500">Loading...</div>

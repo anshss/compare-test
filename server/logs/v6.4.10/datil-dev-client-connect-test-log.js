@@ -4,9 +4,9 @@ export const logEntries = [
     "type": "test_summary",
     "status": "test_completed",
     "LIT_NETWORK": "datil-dev",
-    "totalRuns": 1,
-    "successfulRuns": 1,
+    "totalRuns": 0,
+    "successfulRuns": 0,
     "failedRuns": 0,
-    "averageDuration": 3992
+    "averageDuration": 0.000,
   }
 ];

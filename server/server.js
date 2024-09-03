@@ -26,9 +26,9 @@ app.post("/testConnect/", (req, res) => {
             return;
         }
         console.log(`stdout: ${stdout}`);
-        res.send(`Command executed successfully:\n${stdout}`);
+        res.json({ message: `Command executed successfully:\n${stdout}` });
     });
-    // res.send("Command executed successfully");
+    res.status(500).send(`Failed to execute npm command`);
 });
 
 app.get("/status", (req, res) => {
@@ -36,5 +36,5 @@ app.get("/status", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running`);
 });
