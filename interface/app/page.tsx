@@ -9,10 +9,11 @@ export default function Home() {
     const [totalRuns, setTotalRuns] = useState(1);
 
     async function hitTestConnect() {
+        console.log("Called API endpoint..")
         setResults("Loading...");
         try {
             const response = await axios.post(
-                "http://localhost:3080/testConnect/",
+                `${process.env.NEXT_PUBLIC_SERVER_ENDPOINT}/testConnect/`,
                 { TOTAL_RUNS: totalRuns }
             );
             console.log(`Response from /testConnect/: ${response.data}`);
