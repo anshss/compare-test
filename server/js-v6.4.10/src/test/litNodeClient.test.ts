@@ -3,16 +3,13 @@ import { LitNetwork } from "@lit-protocol/constants";
 import * as fs from "fs";
 import * as path from "path";
 
+const sdkV = "v_6_4_10";
 const LIT_NETWORK = LitNetwork.DatilDev;
 const TOTAL_RUNS = parseInt(process.env.TOTAL_RUNS || "1", 10);
 const PARALLEL_RUNS = 1;
 const DELAY_BETWEEN_TESTS = 0;
-// const LOG_FILE_PATH = `../logs/v6.4.10/${LIT_NETWORK}-client-connect-test-log.js`;
 const timestamp = new Date().toISOString().split(".")[0].replace(/:/g, "-");
-const LOG_FILE_PATH = `../logs/${LIT_NETWORK}-pkp-sign-test-log-${timestamp}.js`;
-
-let logFileHandle: number | null = null;
-let logEntries: any[] = [];
+const LOG_FILE_PATH = `../logs/${LIT_NETWORK}-test-log-${timestamp}.log`;
 
 jest.setTimeout(30000);
 
@@ -22,15 +19,13 @@ test("client connect batch testing", async () => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
-    // fs.writeFileSync(LOG_FILE_PATH, "");
 
     const log = (entry: any) => {
-        const logEntry = {
+        const logEntry = JSON.stringify({
             timestamp: new Date().toISOString(),
             ...entry,
-        };
-        logEntries.push(logEntry);
-        console.log(JSON.stringify(logEntry));
+        });
+        fs.appendFileSync(LOG_FILE_PATH, logEntry + "\n");
     };
 
     const runTest = async (index: number) => {
@@ -61,7 +56,7 @@ test("client connect batch testing", async () => {
                 stack: (error as Error).stack,
                 fullError: JSON.stringify(error),
             };
-            log(errorResult);
+
             return errorResult;
         }
     };
@@ -88,6 +83,7 @@ test("client connect batch testing", async () => {
 
     const summary = {
         type: "test_summary",
+        sdk: sdkV,
         status: "test_completed",
         LIT_NETWORK,
         totalRuns: TOTAL_RUNS,
@@ -105,18 +101,11 @@ test("client connect batch testing", async () => {
     if (failedRuns.length > 0) {
         log({
             type: "test_failure_summary",
+            sdk: sdkV,
             message: `${failedRuns.length} tests failed. Check the log file for details.`,
         });
     }
 
     console.log(`ran ${results.length} tests`);
 
-    // Write logEntries array to the file with export keyword
-    const logContent = `export const logEntries_v6_4_10 = ${JSON.stringify(logEntries, null, 2)};`;
-    // fs.writeFileSync(LOG_FILE_PATH, logContent, "utf-8");
-    fs.appendFileSync(LOG_FILE_PATH, logContent + "\n", "utf-8");
-
-    if (logFileHandle !== null) {
-        fs.closeSync(logFileHandle);
-    }
 });

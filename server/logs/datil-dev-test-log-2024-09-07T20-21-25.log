@@ -1,0 +1,2 @@
+{"timestamp":"2024-09-07T20:21:44.713Z","type":"test_summary","sdk":"v_6_4_10","status":"test_completed","LIT_NETWORK":"datil-dev","totalRuns":20,"successfulRuns":20,"failedRuns":0,"averageDuration":962.7}
+{"timestamp":"2024-09-07T20:21:44.986Z","type":"test_summary","sdk":"v_6_4_8","status":"test_completed","LIT_NETWORK":"datil-dev","totalRuns":20,"successfulRuns":20,"failedRuns":0,"averageDuration":994.25}
