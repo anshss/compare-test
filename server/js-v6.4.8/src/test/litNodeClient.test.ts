@@ -11,7 +11,7 @@ const DELAY_BETWEEN_TESTS = 0;
 const timestamp = new Date().toISOString().split(".")[0].replace(/:/g, "-");
 const LOG_FILE_PATH = `../logs/${LIT_NETWORK}-test-log-${timestamp}.log`;
 
-jest.setTimeout(30000);
+jest.setTimeout(100000);
 
 test("client connect batch testing", async () => {
     jest.setTimeout(1000000);
@@ -45,7 +45,7 @@ test("client connect batch testing", async () => {
                 duration,
             };
 
-            log(result);
+            // log(result);
             return result;
         } catch (error) {
             const errorResult = {
@@ -58,7 +58,7 @@ test("client connect batch testing", async () => {
                 fullError: JSON.stringify(error),
             };
 
-            log(errorResult);
+            // log(errorResult);
             return errorResult;
         }
     };

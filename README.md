@@ -15,3 +15,6 @@ cp .env.example .env.local
 npm i
 npm run run dev
 ```
+
+## Error chances 
+As both the test runs are merged through timestamp, there is a possibility of two log files being generated for a single test run which would appear as two rows on the interface as well
