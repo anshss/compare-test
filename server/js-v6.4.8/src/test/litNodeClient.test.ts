@@ -7,10 +7,14 @@ const LIT_NETWORK = LitNetwork.DatilDev;
 const TOTAL_RUNS = parseInt(process.env.TOTAL_RUNS || "1", 10);
 const PARALLEL_RUNS = 1;
 const DELAY_BETWEEN_TESTS = 0;
-const LOG_FILE_PATH = `../logs/v6.4.8/${LIT_NETWORK}-client-connect-test-log.js`;
+// const LOG_FILE_PATH = `../logs/v6.4.8/${LIT_NETWORK}-client-connect-test-log.js`;
+const timestamp = new Date().toISOString().split(".")[0].replace(/:/g, "-");
+const LOG_FILE_PATH = `../logs/${LIT_NETWORK}-pkp-sign-test-log-${timestamp}.js`;
 
 let logFileHandle: number | null = null;
 let logEntries: any[] = [];
+
+jest.setTimeout(30000);
 
 test("client connect batch testing", async () => {
     jest.setTimeout(1000000);
@@ -18,7 +22,7 @@ test("client connect batch testing", async () => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
     }
-    logFileHandle = fs.openSync(LOG_FILE_PATH, "w");
+    // fs.writeFileSync(LOG_FILE_PATH, "");
 
     const log = (entry: any) => {
         const logEntry = {
@@ -108,8 +112,9 @@ test("client connect batch testing", async () => {
     console.log(`ran ${results.length} tests`);
 
     // Write logEntries array to the file with export keyword
-    const logContent = `export const logEntries = ${JSON.stringify(logEntries, null, 2)};`;
-    fs.writeFileSync(LOG_FILE_PATH, logContent, "utf-8");
+    const logContent = `export const logEntries_v6_4_8 = ${JSON.stringify(logEntries, null, 2)};`;
+    // fs.writeFileSync(LOG_FILE_PATH, logContent, "utf-8");
+    fs.appendFileSync(LOG_FILE_PATH, logContent + "\n", "utf-8");
 
     if (logFileHandle !== null) {
         fs.closeSync(logFileHandle);

@@ -28,7 +28,6 @@ app.post("/testConnect/", (req, res) => {
         console.log(`stdout: ${stdout}`);
         res.json({ message: `Command executed successfully:\n${stdout}` });
     });
-    res.status(500).send(`Failed to execute npm command`);
 });
 
 app.get("/status", (req, res) => {
