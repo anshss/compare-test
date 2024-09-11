@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test-client": "TOTAL_RUNS=${TOTAL_RUNS} nx run-many --target=test-client --all --parallel",
-    "start": "node server.js"
+    "start": "node server.js",
+    "network-test": "chmod +x network_simulator.sh && ./network_simulator.sh"
   },
   "description": "",
   "devDependencies": {
