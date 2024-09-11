@@ -32,7 +32,11 @@ test("client connect batch testing", async () => {
         try {
             const startTime = Date.now();
 
-            await connectLitClient(LIT_NETWORK);
+            const response = await connectLitClient(LIT_NETWORK);
+
+            if (response === false) {
+                throw new Error("Failed to connect to Lit");
+            }
 
             const endTime = Date.now();
             const duration = endTime - startTime;
@@ -100,13 +104,13 @@ test("client connect batch testing", async () => {
 
     log(summary);
 
-    if (failedRuns.length > 0) {
-        log({
-            type: "test_failure_summary",
-            sdk: sdkV,
-            message: `${failedRuns.length} tests failed. Check the log file for details.`,
-        });
-    }
+    // if (failedRuns.length > 0) {
+    //     log({
+    //         type: "test_failure_summary",
+    //         sdk: sdkV,
+    //         message: `${failedRuns.length} tests failed. Check the log file for details.`,
+    //     });
+    // }
 
     console.log(`ran ${results.length} tests`);
 

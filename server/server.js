@@ -35,6 +35,7 @@ function aggregateLogs(logEntries, fileName) {
     logEntries.forEach((entry) => {
         result.LIT_NETWORK = entry.LIT_NETWORK;
         result.totalRuns = entry.totalRuns;
+        console.log(entry);
 
         if (entry.sdk === "v_6_4_10") {
             result.averageDuration_v6_4_10 = entry.averageDuration;
